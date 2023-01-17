@@ -1,0 +1,28 @@
+{
+  "name": "d2lang-js",
+  "version": "0.1.0",
+  "description": "An unofficial interface for building diagram files in javascript",
+  "keywords": [
+    "d2lang",
+    "d2lang-js"
+  ],
+  "author": "Kreshnik Hasanaj",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kreshnik/d2lang-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kreshnik/d2lang-js/issues"
+  },
+  "homepage": "https://github.com/Kreshnik/d2lang-js#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "tsc --build --clean"
+  },
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
