@@ -1,7 +1,7 @@
 {
   "name": "d2lang-js",
   "version": "0.1.0",
-  "description": "An unofficial interface for building diagram files in javascript",
+  "description": "An unofficial interface for building D2 diagram files in javascript",
   "keywords": [
     "d2lang",
     "d2lang-js"
