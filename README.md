@@ -67,8 +67,8 @@ alphabet -> google
 - [x] Containers (nodes/links in nodes)
 - [x] Shapes in shapes
 - [x] Arrow directions
-- [ ] Markdown / block strings / code in shapes
-- [ ] Icons in shapes
+- [x] Markdown / latex / block strings / code in shapes
+- [x] Icons in shapes
 - [ ] SQL table shapes
 - [ ] Class shapes
 - [ ] Comments

@@ -10,6 +10,8 @@ class D2Shape {
         this.connections = [];
         this.style = style;
         this.near = near;
+        this.texts = [];
+        this.icon = "";
     }
     addShape(shape) {
         // @ts-ignore
@@ -19,12 +21,25 @@ class D2Shape {
         // @ts-ignore
         this.connections.push(connection);
     }
+    setIcon(icon) {
+        this.icon = icon;
+    }
+    addText(text) {
+        // @ts-ignore
+        this.texts.push(text);
+    }
     lines() {
         // @ts-ignore
         let shapes = (0, helpers_1.flatten)(this.shapes.map(shape => shape.lines()));
         // @ts-ignore
         let connections = (0, helpers_1.flatten)(this.connections.map(connection => connection.lines()));
+        // @ts-ignore
+        let texts = (0, helpers_1.flatten)(this.texts.map(text => text.lines()));
         let properties = shapes.concat(connections);
+        properties = texts.concat(properties);
+        if (this.icon !== "") {
+            properties.push(`icon: ${this.icon}`);
+        }
         if (this.shape) {
             properties.push(`shape: ${this.shape}`);
         }
@@ -34,8 +49,7 @@ class D2Shape {
         if (this.style) {
             properties.push(...this.style.lines());
         }
-        let lines = (0, helpers_1.addLabelAndProperties)(this.name, this.label, properties);
-        return lines;
+        return (0, helpers_1.addLabelAndProperties)(this.name, this.label, properties);
     }
     toString() {
         return this.lines().join("\n");

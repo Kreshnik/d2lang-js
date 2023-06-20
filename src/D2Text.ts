@@ -1,9 +1,11 @@
 class D2Text {
+    property: string;
     text: string;
     format: string;
     pipes: number;
 
-    constructor(text: string, format: string, pipes: number = 1) {
+    constructor(property: string, text: string, format: string, pipes: number = 1) {
+        this.property = property;
         this.text = text;
         this.format = format;
         this.pipes = pipes;
@@ -11,7 +13,7 @@ class D2Text {
 
     lines(): string[] {
         let sep = "|".repeat(this.pipes);
-        return [`${sep}${this.format}`, ...this.text.split("\n"), sep];
+        return [`${this.property}:${sep}${this.format}`, ...this.text.split("\n"), sep];
     }
 
     toString(): string {

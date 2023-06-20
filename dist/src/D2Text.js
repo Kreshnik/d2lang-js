@@ -1,14 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class D2Text {
-    constructor(text, format, pipes = 1) {
+    constructor(property, text, format, pipes = 1) {
+        this.property = property;
         this.text = text;
         this.format = format;
         this.pipes = pipes;
     }
     lines() {
         let sep = "|".repeat(this.pipes);
-        return [`${sep}${this.format}`, ...this.text.split("\n"), sep];
+        return [`${this.property}:${sep}${this.format}`, ...this.text.split("\n"), sep];
     }
     toString() {
         return this.lines().join("\n");
